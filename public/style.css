@@ -8,6 +8,8 @@
   font-family: "Poppins", sans-serif;
 }
 
+
+
 * {
   margin: 0;
   padding: 0;
@@ -99,6 +101,24 @@
   left: 28px;
   color: #fff;
 }
+
+#video_grid { 
+  flex-grow: 1; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 1rem; 
+  background-color: var(--main-dark); } 
+  
+video { 
+  height: 300px; 
+  border-radius: 1rem; 
+  margin: 0.5rem; 
+  width: 400px; 
+  object-fit: cover; 
+  transform: rotateY(180deg); 
+  -webkit-transform: rotateY(180deg); 
+  -moz-transform: rotateY(180deg); }
 
 @media (max-width: 700px) {
   #show_chat {
