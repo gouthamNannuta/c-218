@@ -1,5 +1,3 @@
-const { json } = require("express");
-
 const socket = io("/");
 
 var peer = new Peer(undefined, {
