@@ -7,6 +7,7 @@ var peer = new Peer(undefined, {
 });
 
 const user = prompt("Enter your name");
+const username = prompt("Enter your email address")
 const myVideo = document.createElement("video")
 myVideo.muted=true
 
@@ -104,6 +105,7 @@ $(function () {
 
     $("#invite_button").click(function(){
         const to = prompt("enter the email address")
+        
         let data = {
             url:window.location.href,
             to:to,

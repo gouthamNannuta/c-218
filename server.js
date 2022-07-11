@@ -5,7 +5,7 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 const { v4: uuidv4 } = require("uuid");
-
+const email = require("username")
 const io = require("socket.io")(server, {
     cors: {
         origin: '*'
@@ -25,7 +25,7 @@ const { info } = require("console");
 const transporter = nodemailer.createTransport({
     port: 465,
     host:"smtp.gmail.com",
-    auth:{user:"gouthamenterprises.hnk@gmail.com", pass:"ulwebzngmargtuwt"},
+    auth:{user:email, pass:"ulwebzngmargtuwt"},
     secure:true
 })
 app.get("/", (req, res) => {
@@ -37,9 +37,10 @@ app.get("/:room", (req, res) => {
 });
 
 app.post("/send-mail",(req,res)=>{
+    const from = req.body.from
     const to = req.body.to
     const url = req.body.url
-    const maildata = {from:"gouthamenterprises.hnk@gmail.com",to:to, subject:"Join the videoChat with me!!",
+    const maildata = {from:email,to:to, subject:"Join the videoChat with me!!",
     html:`<p>Hey there,</p><p>come and join me for a video chat here ${url}</p>`}
     transporter.sendMail(maildata,(error,info)=>{
         if(error){
